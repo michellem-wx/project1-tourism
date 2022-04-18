@@ -5,12 +5,55 @@ $font-secondary-color: #ad4b02;
 $banner-heading: 46px;
 
 @mixin pageheader() {
+    display: flex;
     padding-left: 200px;
     padding-right: 200px;
     line-height: 2.5;
+    flex-direction: column;
+    text-align: center;
 
     h2 {
         color: $font-secondary-color;
+    }
+
+    p {
+        font-size: large;
+    }
+}
+
+@mixin lists() {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $background-primary-color;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 50px;
+        color: $font-primary-color;
+        font-weight: bold;
+
+        a:link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:visited {
+            color: inherit;
+            text-decoration: inherit;
+        }
+        :hover {
+            color: $font-secondary-color;
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
     }
 }
 
@@ -37,31 +80,7 @@ $banner-heading: 46px;
 }
 
 .navigation {
-    height: 60px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: $background-primary-color;
-    align-content: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: rgba(1, 6, 6, 0.835);
-
-    &__categories {
-        display: flex;
-        column-gap: 50px;
-        margin: 30px;
-
-        :hover {
-            color: white;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        :active {
-            text-decoration: underline;
-        }
-    }
+    @include lists();
 }
 
 section {
@@ -78,7 +97,6 @@ section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 500px 500px;
-            // position: relative;
 
             img {
                 width: 100%;
@@ -136,16 +154,22 @@ section {
 
 // GALLERY LANDING PAGE
 .gallery {
-    h2 {
-        color: red;
-        font-family: arial;
+    h3 {
+        color: $font-primary-color;
+        margin-left: 100px;
     }
 }
+
+.gallery-header {
+    @include pageheader();
+}
+
 .gallery-container {
     position: relative;
     column-count: 3;
     padding: 2px;
     column-gap: 2px;
+    margin-bottom: 50px;
 
     &__items {
         display: inline-block;
@@ -195,24 +219,16 @@ section {
     }
 
     @media all and (min-width: 40em) {
-        .list-item {
+        .container-item {
             width: 50%;
         }
     }
     @media all and (min-width: 60em) {
-        .list-item {
+        .container-item {
             width: 33.33%;
         }
     }
 }
-
-// .grid-container {
-//     display: grid;
-//     justify-content: center;
-
-//     &__item {
-//     }
-// }
 
 // FORM - CONTACT US ------------------
 
@@ -262,6 +278,7 @@ select {
     display: flex;
     justify-content: center;
     height: auto;
+    margin-bottom: 50px;
 
     &__content {
         background-color: $background-secondary-color;
@@ -269,4 +286,11 @@ select {
         flex-direction: column;
         padding: 20px;
     }
+}
+
+// FOOTER
+
+.footer {
+    @include lists();
+    font-size: 13px;
 }

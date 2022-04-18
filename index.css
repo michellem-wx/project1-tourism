@@ -17,28 +17,35 @@
 }
 
 .navigation {
-  height: 60px;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   background-color: #d7dbda;
-  align-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: rgba(1, 6, 6, 0.835);
 }
-.navigation__categories {
+.navigation ul {
+  list-style: none;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   column-gap: 50px;
-  margin: 30px;
+  color: #432910;
+  font-weight: bold;
 }
-.navigation__categories :hover {
-  color: white;
+.navigation ul a:link {
+  text-decoration: none;
+  color: inherit;
+}
+.navigation ul a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+.navigation ul :hover {
+  color: #ad4b02;
   cursor: pointer;
   text-decoration: underline;
+  text-decoration: none;
 }
-.navigation__categories :active {
-  text-decoration: underline;
+.navigation ul a:active {
+  text-decoration: none;
 }
 
 section {
@@ -102,9 +109,24 @@ section .content-section__gallery__feature3 {
   margin: 30px;
 }
 
-.gallery h2 {
-  color: red;
-  font-family: arial;
+.gallery h3 {
+  color: #432910;
+  margin-left: 100px;
+}
+
+.gallery-header {
+  display: flex;
+  padding-left: 200px;
+  padding-right: 200px;
+  line-height: 2.5;
+  flex-direction: column;
+  text-align: center;
+}
+.gallery-header h2 {
+  color: #ad4b02;
+}
+.gallery-header p {
+  font-size: large;
 }
 
 .gallery-container {
@@ -112,6 +134,7 @@ section .content-section__gallery__feature3 {
   column-count: 3;
   padding: 2px;
   column-gap: 2px;
+  margin-bottom: 50px;
 }
 .gallery-container__items {
   display: inline-block;
@@ -123,12 +146,18 @@ section .content-section__gallery__feature3 {
 }
 
 .header-transport {
+  display: flex;
   padding-left: 200px;
   padding-right: 200px;
   line-height: 2.5;
+  flex-direction: column;
+  text-align: center;
 }
 .header-transport h2 {
   color: #ad4b02;
+}
+.header-transport p {
+  font-size: large;
 }
 
 .container {
@@ -157,23 +186,29 @@ section .content-section__gallery__feature3 {
   margin: 10px;
 }
 @media all and (min-width: 40em) {
-  .container .list-item {
+  .container .container-item {
     width: 50%;
   }
 }
 @media all and (min-width: 60em) {
-  .container .list-item {
+  .container .container-item {
     width: 33.33%;
   }
 }
 
 .contact-header {
+  display: flex;
   padding-left: 200px;
   padding-right: 200px;
   line-height: 2.5;
+  flex-direction: column;
+  text-align: center;
 }
 .contact-header h2 {
   color: #ad4b02;
+}
+.contact-header p {
+  font-size: large;
 }
 
 label {
@@ -218,12 +253,46 @@ select {
   display: flex;
   justify-content: center;
   height: auto;
+  margin-bottom: 50px;
 }
 .contact-form__content {
   background-color: #a3b2b5;
   display: flex;
   flex-direction: column;
   padding: 20px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #d7dbda;
+  font-size: 13px;
+}
+.footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 50px;
+  color: #432910;
+  font-weight: bold;
+}
+.footer ul a:link {
+  text-decoration: none;
+  color: inherit;
+}
+.footer ul a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+.footer ul :hover {
+  color: #ad4b02;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration: none;
+}
+.footer ul a:active {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=index.css.map */
