@@ -4,6 +4,16 @@ $font-primary-color: #432910;
 $font-secondary-color: #ad4b02;
 $banner-heading: 46px;
 
+@mixin pageheader() {
+    padding-left: 200px;
+    padding-right: 200px;
+    line-height: 2.5;
+
+    h2 {
+        color: $font-secondary-color;
+    }
+}
+
 * {
     font-family: "Poppins", sans-serif;
 }
@@ -151,9 +161,7 @@ section {
 // GETTING AROUND - LANDING PAGE
 
 .header-transport {
-    padding-left: 200px;
-    padding-right: 200px;
-    line-height: 2.5;
+    @include pageheader();
 }
 
 .container {
@@ -198,10 +206,67 @@ section {
     }
 }
 
-.grid-container {
-    display: grid;
-    justify-content: center;
+// .grid-container {
+//     display: grid;
+//     justify-content: center;
 
-    &__item {
+//     &__item {
+//     }
+// }
+
+// FORM - CONTACT US ------------------
+
+.contact-header {
+    @include pageheader();
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    display: flex;
+    font-size: 16px;
+    width: 500px;
+    border-style: none;
+    border-radius: 3px;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+textarea {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-style: none;
+    border-radius: 3px;
+}
+
+select {
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 500px;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    height: auto;
+
+    &__content {
+        background-color: $background-secondary-color;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
     }
 }
