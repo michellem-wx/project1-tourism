@@ -316,3 +316,8 @@ select {
     @include lists();
     font-size: 13px;
 }
+
+// GitHUB details landing page
+.github {
+    @include pageheader();
+}
